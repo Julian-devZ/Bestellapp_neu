@@ -1,0 +1,34 @@
+.border {
+  border: black;
+  border-style: groove;
+}
+.border img {
+  object-fit: cover;
+  width: 70%;
+  height: 250px;
+}
+.overall {
+  display: flex;
+}
+#basket img {
+  width: 18px;
+  height: auto;
+  object-fit: cover;
+}
+.items_basket {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  object-fit: cover;
+}
+.basket_price {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+}
+.basket_font {
+  display: flex;
+  flex-direction: column;
+  text-align: start;
+}

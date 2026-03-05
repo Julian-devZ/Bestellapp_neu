@@ -21,3 +21,8 @@ function showFooter() {
     </footer>
     `;
 }
+function createBasket() {
+  for (let indexBasket = 0; indexBasket < myBasket.length; indexBasket++) {
+    basketRef.innerHTML += showBasket(indexBasket);
+  }
+}
