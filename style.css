@@ -10,22 +10,14 @@
 .overall {
   display: flex;
 }
-#basket img {
-  width: 18px;
-  height: auto;
-  object-fit: cover;
-}
-.items_basket {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  object-fit: cover;
-}
-.basket_price {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 4px;
+
+#basket {
+  position: fixed;
+  right: 0;
+  width: 20%;
+  text-align: center;
+  background-color: rgb(234, 231, 205);
+  height: 100%;
 }
 .basket_font {
   display: flex;
