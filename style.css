@@ -1,6 +1,7 @@
 .border {
   border: black;
   border-style: groove;
+  border-radius: 10px;
 }
 .border img {
   object-fit: cover;
@@ -14,10 +15,22 @@
 #basket {
   position: fixed;
   right: 0;
-  width: 20%;
+  width: 30%;
   text-align: center;
   background-color: rgb(234, 231, 205);
-  height: 100%;
+  height: 80%;
+  border-radius: 10px;
+}
+.openclose {
+  background-color: aliceblue;
+  width: 10px;
+  height: 5px;
+}
+#openmenu {
+  display: none;
+}
+.gap {
+  gap: 2px;
 }
 .basket_font {
   display: flex;

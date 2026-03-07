@@ -54,6 +54,7 @@ let myFood = [
   },
 ];
 let ContentRef = document.getElementById("content");
+let ContentRef2 = document.getElementById("content2");
 let menuRef = document.getElementById("menu");
 let basketRef = document.getElementById("basket");
 let myBasket = [];
