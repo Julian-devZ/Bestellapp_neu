@@ -53,11 +53,29 @@ let myFood = [
     id: 1,
   },
 ];
+let headerRef = document.getElementById("header");
+let footerRef = document.getElementById("footer");
 let ContentRef = document.getElementById("content");
 let ContentRef2 = document.getElementById("content2");
-let menuRef = document.getElementById("menu");
-let basketRef = document.getElementById("basket");
+const basketRef = document.getElementById("basket");
+
 let myBasket = [];
+function createHeader() {
+  headerRef.innerHTML += showHeader();
+}
+function createFooter() {
+  footerRef.innerHTML += showFooter();
+}
 function createContent() {
   ContentRef.innerHTML += showContent();
+  for (let indexFood = 0; indexFood < myFood.length; indexFood++) {}
+}
+
+function createContent2() {
+  ContentRef2.innerHTML += showContent2();
+}
+
+//<h1> ${(myBasket[i].Preis * myBasket[i].id).toFixed(i)} €</h1>
+function toggleBasket() {
+  basketRef.classList.toggle("none");
 }

@@ -1,12 +1,19 @@
 body {
   margin: 0;
   box-sizing: border-box;
+  background-image: url(assets/images/fresh-pasta.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 h1 {
   font-size: 20px;
 }
 a {
   text-decoration: none;
+  color: black !important;
+}
+a:hover {
+  color: white !important;
 }
 header {
   display: flex;
@@ -23,8 +30,9 @@ nav {
   gap: 20px;
   justify-content: center;
   height: auto;
-  background-color: beige;
+  background-color: rgb(146, 146, 140);
 }
+
 header img {
   width: 100px;
   height: auto;
@@ -37,6 +45,9 @@ footer {
 footer img {
   width: 100px;
   height: auto;
+}
+#content {
+  width: 70%;
 }
 button {
   width: 24px;

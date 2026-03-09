@@ -1,23 +1,31 @@
 .border {
+  margin: 16px;
+  display: flex;
+  flex-direction: column;
+  color: white;
   border: black;
   border-style: groove;
   border-radius: 10px;
+  background-color: rgb(62, 61, 61);
 }
 .border img {
   object-fit: cover;
-  width: 70%;
+  width: 80%;
   height: 250px;
+  border-radius: 10px;
 }
 .overall {
   display: flex;
 }
-
+.none {
+  display: none;
+}
 #basket {
   position: fixed;
   right: 0;
   width: 30%;
   text-align: center;
-  background-color: rgb(234, 231, 205);
+  background-color: rgb(146, 146, 140);
   height: 80%;
   border-radius: 10px;
 }

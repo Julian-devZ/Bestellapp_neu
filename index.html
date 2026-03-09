@@ -7,18 +7,18 @@
     <link rel="stylesheet" href="standart.css" />
     <title>Bestellapp</title>
   </head>
-  <body
-    onload="(createHeader(), createContent(), createFooter(), createBasket())"
-  >
+  <body onload="(createHeader(), createContent(), createFooter())">
     <header id="header"></header>
     <nav>
       <a href="#Pasta">Pasta</a>
       <a href="#Pizza">Pizza</a>
       <a href="#Salat">Salat</a>
+      <button onclick="toggleBasket()">X</button>
     </nav>
     <div class="overall">
       <div id="content"></div>
       <div id="basket">
+        <button onclick="toggleBasket()">X</button>
         Warenkorb<br /><a href="index2.html">Bestellung abschließen</a>
       </div>
     </div>
