@@ -53,26 +53,48 @@ let myFood = [
     id: 1,
   },
 ];
+let myImages = [
+  "assets/images/fresh-pasta.jpg",
+  "assets/images/fresh-pasta.jpg",
+  "assets/images/pizza.jpg",
+  "assets/images/pizza.jpg",
+  "assets/images/salad.jpg",
+  "assets/images/salad.jpg",
+  "assets/images/salad.jpg",
+  "assets/images/salad.jpg",
+];
+
 let headerRef = document.getElementById("header");
 let footerRef = document.getElementById("footer");
 let ContentRef = document.getElementById("content");
 let ContentRef2 = document.getElementById("content2");
 const basketRef = document.getElementById("basket");
 
+const img = document.getElementById("image");
 let myBasket = [];
-function createHeader() {
-  headerRef.innerHTML += showHeader();
-}
-function createFooter() {
-  footerRef.innerHTML += showFooter();
-}
+
 function createContent() {
-  ContentRef.innerHTML += showContent();
-  for (let indexFood = 0; indexFood < myFood.length; indexFood++) {}
+  console.log("start");
+  for (let indexFood = 0; indexFood < myFood.length; indexFood++) {
+    ContentRef.innerHTML += showContent(indexFood);
+  }
 }
 
 function createContent2() {
   ContentRef2.innerHTML += showContent2();
+}
+function createBasket(indexFood) {
+  basketRef.innerHTML = " Warenkorb";
+  for (let indexBasket = 0; indexBasket < myBasket.length; indexBasket++) {
+    basketRef.innerHTML += showBasket(indexBasket, indexFood);
+  }
+}
+
+function addtoBasket(indexFood) {
+  const FoodBasket = myFood[indexFood];
+  myBasket.push(FoodBasket);
+  console.log(myBasket);
+  createBasket();
 }
 
 //<h1> ${(myBasket[i].Preis * myBasket[i].id).toFixed(i)} €</h1>

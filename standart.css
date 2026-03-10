@@ -6,14 +6,14 @@ body {
   background-repeat: no-repeat;
 }
 h1 {
-  font-size: 20px;
+  font-size: 30px;
 }
 a {
   text-decoration: none;
-  color: black !important;
+  color: white !important;
 }
 a:hover {
-  color: white !important;
+  color: orange !important;
 }
 header {
   display: flex;
@@ -26,11 +26,24 @@ header {
   background-color: orange;
 }
 nav {
+  color: white;
   display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   gap: 20px;
   justify-content: center;
   height: auto;
-  background-color: rgb(146, 146, 140);
+  background-color: rgb(62, 61, 61);
+}
+#nav {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+nav img {
+  border-radius: 400px;
+  width: 30%;
 }
 
 header img {
