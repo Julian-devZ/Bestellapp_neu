@@ -8,6 +8,9 @@ body {
 h1 {
   font-size: 30px;
 }
+h2 {
+  color: white;
+}
 a {
   text-decoration: none;
   color: white !important;
@@ -60,7 +63,7 @@ footer img {
   height: auto;
 }
 #content {
-  width: 70%;
+  width: 100%;
 }
 button {
   width: 24px;

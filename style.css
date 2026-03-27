@@ -16,6 +16,8 @@
 }
 .overall {
   display: flex;
+  flex-direction: column;
+  max-width: 1440px;
 }
 .none {
   display: none;
@@ -56,4 +58,22 @@
   display: flex;
   flex-direction: column;
   text-align: start;
+}
+#overlay {
+  position: fixed;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  top: 0px;
+  bottom: 0;
+  height: 100vh;
+  width: 100%;
+  color: white;
+  background-color: rgba(34, 34, 71, 0.2);
+  z-index: 99;
+}
+#overlay img {
+  width: 500px;
+  border-radius: 30%;
 }

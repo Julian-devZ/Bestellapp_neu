@@ -7,9 +7,10 @@
     <link rel="stylesheet" href="standart.css" />
     <title>Bestellapp</title>
   </head>
-  <body onload="(createContent(), createBasket())">
+  <body onload="(init())">
+      <div class="none" id="overlay"></div>
+ 
     <header id="header">
-      <header id="header">
         <a href="index.html"
           ><img src="assets/images/Bestell App- Logo.svg" alt="Logo Bestellapp"
         /></a>
@@ -18,26 +19,28 @@
           <div class="openclose"></div>
           <div class="openclose"></div>
         </button>
+      
       </header>
-    </header>
-    <nav>
-      <div id="nav">
-        <h2><a href="#Pasta">Pasta</a></h2>
-        <h2><a href="#Pizza">Pizza</a></h2>
-        <h2><a href="#Salat">Salat</a></h2>
-      </div>
-      <img src="assets/images/Logo.app.png" alt="City Imbiss" />
-      <strong><h1>City Imbiss</h1></strong>
-      <button onclick="toggleBasket()">W</button>
-    </nav>
-
-    <div class="overall">
+ <div id="overall"></div>
+   
+      <nav>
+        <div id="nav">
+          <h2><a href="# pasta">Pasta</a></h2>
+          <h2><a href="# pizza">Pizza</a></h2>
+          <h2><a href="# salat">Salat</a></h2>
+        </div>
+        <img src="assets/images/Logo.app.png" alt="City Imbiss" />
+        <strong><h1>City Imbiss</h1></strong>
+        <button onclick="toggleBasket()">W</button>
+      </nav>
+     
       <div id="content"></div>
 
-      <div id="basket">
-        <button onclick="toggleBasket()">X</button>
-        Warenkorb<br />
-        <a href="index2.html">Bestellung abschließen</a>
+      <div id="basket"><h2>Warenkorb</h2>
+        
+        <img src= alt="">
+        <img src= alt="">
+        <img src= alt="">
       </div>
     </div>
 
