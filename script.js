@@ -67,16 +67,6 @@ let myFood = {
     },
   ],
 };
-let myImages = [
-  "assets/images/fresh-pasta.jpg",
-  "assets/images/fresh-pasta.jpg",
-  "assets/images/pizza.jpg",
-  "assets/images/pizza.jpg",
-  "assets/images/salad.jpg",
-  "assets/images/salad.jpg",
-  "assets/images/salad.jpg",
-  "assets/images/salad.jpg",
-];
 
 let headerRef = document.getElementById("header");
 let footerRef = document.getElementById("footer");
@@ -87,86 +77,74 @@ let overlayRef = document.getElementById("overlay");
 
 const img = document.getElementById("image");
 let myBasket = [];
-let deleleDishes = [];
 
 function init() {
+  createContent();
   createBasket();
   createOverlay();
   //unvalidamount();
 }
-
-for (let category in myFood) {
-  // Eigener Container pro Kategorie
-  let categoryHTML = `<div class="category id="${category}">
+function createContent() {
+  for (let category in myFood) {
+    // Eigener Container pro Kategorie
+    let categoryHTML = `<div class="category id="${category}">
                         <h2 class= "border">${category}</h2>`;
 
-  // Nur die Gerichte dieser Kategorie
-  for (let item of myFood[category]) {
-    categoryHTML += `
-      <div class="border">
-        <h3>${item.name}</h3>
-        <p>${item.description}</p>
-        <p>${item.price} €</p><button onclick="addtoBasket()">+</button></p>
-         <img src="${item.image}" alt="${item.name}">
-      </div>
-    `;
-  }
+    // Nur die Gerichte dieser Kategorie
+    for (let i = 0; i < myFood[category].length; i++) {
+      categoryHTML += showContent(myFood[category][i], category, i);
+    }
 
-  categoryHTML += `</div>`;
+    categoryHTML += `</div>`;
 
-  // Kategorie separat ins HTML einfügen
-  ContentRef.innerHTML += categoryHTML;
-}
-//function createContent() {
-//for (let category in myFood) {
-//console.log("Kategorie:", category);
-
-//// for (let indexFood = 0; indexFood < myFood[category].length; indexFood++) {
-//let item = myFood[category][indexFood];
-//ContentRef.innerHTML += showContent(item);
-//}
-//}
-//}
-function createImages() {
-  for (let indexImages = 0; indexImages < myImages.length; indexImages++) {
-    ContentRef.innerHTML += showImages(indexImages);
+    ContentRef.innerHTML += categoryHTML;
   }
 }
 
-function createBasket(item) {
+function createBasket() {
   basketRef.innerHTML = "";
-  for (let indexBasket = 0; indexBasket < myBasket.length; indexBasket++) {
-    basketRef.innerHTML += showBasket(indexBasket, item);
+  let subtotal = 0;
+  for (let category in myFood) {
+    for (let i = 0; i < myFood[category].length; i++) {
+      let item = myFood[category][i];
+
+      if (item.amount > 0) {
+        basketRef.innerHTML += showBasket(item, category, i);
+
+        subtotal += item.price * item.amount;
+      }
+    }
   }
+
+  const delivery = 2.5;
+  const total = subtotal + delivery;
+
+  basketRef.innerHTML += showTotal(subtotal, delivery, total);
 }
-function addtoBasket(indexFood) {
-  const FoodBasket = myFood[indexFood];
-  myBasket.push(FoodBasket);
-  console.log(myBasket);
-  createBasket();
-}
-function addtoDelete(indexFood) {
-  const deleteBasket = myFood[indexFood];
-  deleleDishes.push(deleteBasket);
-  console.log(myBasket);
+function addToBasket(category, index) {
+  let item = myFood[category][index];
+
+  if (!myBasket.includes(item)) {
+    myBasket.push(item);
+  }
+
+  item.amount++;
+
   createBasket();
 }
 function toggleBasket() {
   basketRef.classList.toggle("none");
 }
-function addamount(indexFood) {
-  myBasket[indexFood].amount++;
-  basketRef.innerHTML = "";
-  for (let indexBasket = 0; indexBasket < myBasket.length; indexBasket++) {
-    basketRef.innerHTML += updateBasket(indexBasket, indexFood);
-  }
+function addamount(category, index) {
+  myFood[category][index].amount++;
+  createBasket();
 }
-function lessamount(indexFood) {
-  myBasket[indexFood].amount--;
-  basketRef.innerHTML = "";
-  for (let indexBasket = 0; indexBasket < myBasket.length; indexBasket++) {
-    basketRef.innerHTML += updateBasket2(indexBasket, indexFood);
+
+function lessamount(category, index) {
+  if (myFood[category][index].amount > 0) {
+    myFood[category][index].amount--;
   }
+  createBasket();
 }
 function Openoverlay() {
   overlayRef.classList.remove("none");

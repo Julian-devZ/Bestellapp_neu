@@ -1,51 +1,52 @@
-function showBasket(indexFood, item) {
+function showContent(item, category, index) {
   return `
-  
-  <div class="items_basket">
-  <div class="basket_font">
-<h2>${myBasket.item.name}</h2>
-<div class ="basket_price">
-<h2>Menge:<button onclick="addamount(${indexFood})">+</button> ${item.amount}<button>-</button> <br></h2>
-<h2> ${(myBasket.item.price * myBasket.item.amount).toFixed(indexFood)} €</h2>
-  <button onclick="toggleBasket(),addtoDelete()">X</button>
- </div>
-</div>
-<a onclick="Openoverlay()">Ihre Bestellung hier abschließen</a>
-`;
+    <div class="border">
+      <h3>${item.name}</h3>
+      <p>${item.description}</p>
+      <p>${item.price} €</p>
+      <button onclick="addToBasket('${category}', ${index})">+</button>
+      <img src="${item.image}" alt="${item.name}">
+    </div>
+  `;
 }
-function updateBasket(indexFood) {
+function showBasket(item, category, index) {
   return `
-  
-  <div class="items_basket">
-  <div class="basket_font">
-<h2>${myBasket[indexFood].name}</h2>
-<div class ="basket_price">
-<h2>Menge:<button onclick=" addamount(${indexFood})">+</button> ${myFood[indexFood].amount}<button onclick="lessamount(${indexFood})">-</button> <br></h2>
-<h2> ${(myBasket[indexFood].price * myBasket[indexFood].amount).toFixed(indexFood)} €</h2>
+    <div class="items_basket">
+      <h2>${item.name}</h2>
 
- 
-  <button onclick="toggleBasket()">X</button>
- </div>
-</div>
+      <button onclick="addamount('${category}', ${index})">+</button>
+      ${item.amount}
+      <button onclick="lessamount('${category}', ${index})">-</button>
 
-`;
+      <h2>${(item.price * item.amount).toFixed(2)} €</h2>
+    </div>
+  `;
 }
-function updateBasket2(indexFood) {
+function updateBasket(index) {
+  let item = myBasket[index];
   return `
   
   <div class="items_basket">
-  <div class="basket_font">
-<h2>${myBasket[indexFood].name}</h2>
-<div class ="basket_price">
-<h2>Menge:<button onclick=" addamount(${indexFood})">+</button> ${myFood[indexFood].amount}<button onclick="lessamount(${indexFood}),unvalidamount(${indexFood})">-</button> <br></h2>
-<h2> ${(myBasket[indexFood].price * myBasket[indexFood].amount).toFixed(indexFood)} €</h2>
+            <h2>${item.name}</h2>
 
- 
-  <button onclick="toggleBasket()">X</button>
- </div>
-</div>
+            <button onclick="addamount(${index})">+</button>
+            ${item.amount}
+            <button onclick="lessamount(${index})">-</button>
 
-`;
+            <h2>${(item.price * item.amount).toFixed(2)} €</h2>
+        </div>
+    `;
+}
+function showTotal(subtotal, delivery, total) {
+  return `
+    <div class="basket-total">
+      <p>Zwischensumme: ${subtotal.toFixed(2)} €</p>
+      <p>Lieferkosten: ${delivery.toFixed(2)} €</p>
+      <hr>
+      <h3>Gesamt: ${total.toFixed(2)} €</h3>
+      <p onclick="Openoverlay()"> Bestellung abschließen</p>
+    </div>
+  `;
 }
 function showOverlay() {
   return `
