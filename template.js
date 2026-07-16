@@ -9,6 +9,7 @@ function showContent(item, category, index) {
     </div>
   `;
 }
+
 function showBasket(item, category, index) {
   return `
     <div class="items_basket">
@@ -22,6 +23,7 @@ function showBasket(item, category, index) {
     </div>
   `;
 }
+
 function updateBasket(index) {
   let item = myBasket[index];
   return `
@@ -37,6 +39,7 @@ function updateBasket(index) {
         </div>
     `;
 }
+
 function showTotal(subtotal, delivery, total) {
   return `
     <div class="basket-total">
@@ -44,14 +47,15 @@ function showTotal(subtotal, delivery, total) {
       <p>Lieferkosten: ${delivery.toFixed(2)} €</p>
       <hr>
       <h3>Gesamt: ${total.toFixed(2)} €</h3>
-      <p onclick="Openoverlay()"> Bestellung abschließen</p>
+      <a onclick="Openoverlay()">Bestellen</a>
     </div>
   `;
 }
+
 function showOverlay() {
   return `
 
-    <div id ="overlay"><img src="assets/images/food_is_on_the_way.png" alt="food on the food_is_on_the_way">Ihre Bestellung ist unterwegs!</div>
+    <div id ="overlay">Sie haben eine Testbestellung abgegeben.</div>
    
     `;
 }

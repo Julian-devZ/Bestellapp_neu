@@ -94,9 +94,7 @@ function createContent() {
     for (let i = 0; i < myFood[category].length; i++) {
       categoryHTML += showContent(myFood[category][i], category, i);
     }
-
     categoryHTML += `</div>`;
-
     ContentRef.innerHTML += categoryHTML;
   }
 }
@@ -107,10 +105,8 @@ function createBasket() {
   for (let category in myFood) {
     for (let i = 0; i < myFood[category].length; i++) {
       let item = myFood[category][i];
-
       if (item.amount > 0) {
         basketRef.innerHTML += showBasket(item, category, i);
-
         subtotal += item.price * item.amount;
       }
     }
@@ -118,23 +114,22 @@ function createBasket() {
 
   const delivery = 2.5;
   const total = subtotal + delivery;
-
   basketRef.innerHTML += showTotal(subtotal, delivery, total);
 }
+
 function addToBasket(category, index) {
   let item = myFood[category][index];
-
   if (!myBasket.includes(item)) {
     myBasket.push(item);
   }
-
   item.amount++;
-
   createBasket();
 }
+
 function toggleBasket() {
   basketRef.classList.toggle("none");
 }
+
 function addamount(category, index) {
   myFood[category][index].amount++;
   createBasket();
@@ -146,6 +141,7 @@ function lessamount(category, index) {
   }
   createBasket();
 }
+
 function Openoverlay() {
   overlayRef.classList.remove("none");
   basketRef.classList.add("none");
@@ -154,6 +150,7 @@ function Openoverlay() {
     setTimeout(() => overlayRef.close(), 500);
   }, 4000);
 }
+
 function createOverlay() {
   overlayRef.innerHTML += showOverlay();
 }
