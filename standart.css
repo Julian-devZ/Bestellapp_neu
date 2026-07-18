@@ -75,3 +75,11 @@ button {
 button:hover {
   background-color: rgb(173, 146, 96);
 }
+@media (max-width: 720px) {
+  h1 {
+    font-size: 22px;
+  }
+  h2 {
+    font-size: 16px;
+  }
+}

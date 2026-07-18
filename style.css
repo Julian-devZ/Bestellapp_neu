@@ -13,6 +13,11 @@
   height: 40px;
   object-fit: cover;
 }
+.basket_img {
+  width: 40px;
+  height: auto;
+  object-fit: cover;
+}
 .menubutton {
   width: 50px;
   height: 50px;
@@ -52,7 +57,22 @@
   background-color: rgb(146, 146, 140);
   height: 80%;
   border-radius: 10px;
+  overflow-y: auto;
 }
+
+#basket_mini {
+  display: none;
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  width: 110%;
+  text-align: center;
+  background-color: rgb(146, 146, 140);
+  height: 6%;
+  border-radius: 10px;
+  overflow-y: auto;
+}
+
 .openclose {
   background-color: aliceblue;
   width: 10px;
@@ -71,9 +91,8 @@
 }
 #overlay {
   position: fixed;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  text-align: center;
+  vertical-align: middle;
   gap: 20px;
   top: 0px;
   bottom: 0;
@@ -86,4 +105,19 @@
 #overlay img {
   width: 500px;
   border-radius: 30%;
+}
+@media (max-width: 720px) {
+  .star {
+    width: 80px;
+    height: 25px;
+  }
+  .basket_img {
+    width: 30px;
+  }
+  #basket {
+    display: none;
+  }
+  #basket_mini {
+    display: block;
+  }
 }

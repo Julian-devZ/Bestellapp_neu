@@ -12,7 +12,7 @@ function showContent(item, category, index) {
 
 function showBasket(item, category, index) {
   return `
-    <div class="items_basket">
+    <div class="border">
       <h2>${item.name}</h2>
 
       <button onclick="addamount('${category}', ${index})">+</button>
@@ -55,7 +55,7 @@ function showTotal(subtotal, delivery, total) {
 function showOverlay() {
   return `
 
-    <div id ="overlay">Sie haben eine Testbestellung abgegeben.</div>
+    <div id ="overlay"><p class="border">Sie haben eine Testbestellung abgegeben.</p></div>
    
     `;
 }

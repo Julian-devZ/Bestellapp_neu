@@ -68,10 +68,7 @@ let myFood = {
   ],
 };
 
-let headerRef = document.getElementById("header");
-let footerRef = document.getElementById("footer");
 let ContentRef = document.getElementById("content");
-let ContentRef2 = document.getElementById("content2");
 const basketRef = document.getElementById("basket");
 let overlayRef = document.getElementById("overlay");
 
@@ -124,6 +121,7 @@ function addToBasket(category, index) {
   }
   item.amount++;
   createBasket();
+  basketRef.classList.remove("none");
 }
 
 function toggleBasket() {
@@ -149,6 +147,8 @@ function Openoverlay() {
     overlayRef.classList.add("none");
     setTimeout(() => overlayRef.close(), 500);
   }, 4000);
+  createBasket();
+  basketRef.innerHTML = "Ihr Warenkorb ist leer.";
 }
 
 function createOverlay() {
