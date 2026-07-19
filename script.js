@@ -70,6 +70,7 @@ let myFood = {
 
 let ContentRef = document.getElementById("content");
 const basketRef = document.getElementById("basket");
+const basketMiniRef = document.getElementById("basket_count");
 let overlayRef = document.getElementById("overlay");
 
 const img = document.getElementById("image");
@@ -121,6 +122,8 @@ function addToBasket(category, index) {
   }
   item.amount++;
   createBasket();
+  updateBasketCount();
+
   basketRef.classList.remove("none");
 }
 
@@ -131,6 +134,7 @@ function toggleBasket() {
 function addamount(category, index) {
   myFood[category][index].amount++;
   createBasket();
+  updateBasketCount();
 }
 
 function lessamount(category, index) {
@@ -138,21 +142,42 @@ function lessamount(category, index) {
     myFood[category][index].amount--;
   }
   createBasket();
+  updateBasketCount();
 }
 
 function Openoverlay() {
   overlayRef.classList.remove("none");
   basketRef.classList.add("none");
+  for (let category in myFood) {
+    for (let item of myFood[category]) {
+      item.amount = 0;
+    }
+  }
+  myBasket = [];
+  createBasket();
+  updateBasketCount();
   setTimeout(() => {
     overlayRef.classList.add("none");
     setTimeout(() => overlayRef.close(), 500);
   }, 4000);
-  createBasket();
-  basketRef.innerHTML = "Ihr Warenkorb ist leer.";
 }
 
 function createOverlay() {
   overlayRef.innerHTML += showOverlay();
+}
+function getBasketCount() {
+  let count = 0;
+
+  for (let category in myFood) {
+    for (let item of myFood[category]) {
+      count += item.amount;
+    }
+  }
+
+  return count;
+}
+function updateBasketCount() {
+  basketMiniRef.textContent = getBasketCount();
 }
 //function unvalidamount(indexFood) {
 //if (myFood[indexFood].amount < 1) {

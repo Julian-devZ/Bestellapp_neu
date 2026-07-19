@@ -7,6 +7,7 @@
   border-style: groove;
   border-radius: 10px;
   background-color: rgb(62, 61, 61);
+  overflow-y: auto;
 }
 .star {
   width: 100px;
@@ -61,16 +62,37 @@
 }
 
 #basket_mini {
-  display: none;
   position: fixed;
-  right: 0;
-  bottom: 0;
-  width: 110%;
-  text-align: center;
-  background-color: rgb(146, 146, 140);
-  height: 6%;
+  bottom: 0px;
+  right: 50%;
   border-radius: 10px;
-  overflow-y: auto;
+  display: none;
+  background-color: rgb(146, 146, 140);
+  height: 5%;
+}
+
+#basket_mini img {
+  width: 40px;
+  height: 40px;
+}
+#basket_count {
+  position: absolute;
+  top: -6px;
+  right: -6px;
+
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+
+  background-color: rgb(251, 116, 5);
+  color: white;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-size: 12px;
+  font-weight: bold;
 }
 
 .openclose {
@@ -115,9 +137,12 @@
     width: 30px;
   }
   #basket {
-    display: none;
+    width: 100%;
   }
   #basket_mini {
+    display: block;
+  }
+  #basket_resp {
     display: block;
   }
 }
