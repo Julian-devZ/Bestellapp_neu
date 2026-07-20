@@ -72,7 +72,6 @@ let ContentRef = document.getElementById("content");
 const basketRef = document.getElementById("basket");
 const basketMiniRef = document.getElementById("basket_count");
 let overlayRef = document.getElementById("overlay");
-
 const img = document.getElementById("image");
 let myBasket = [];
 
@@ -85,7 +84,7 @@ function init() {
 function createContent() {
   for (let category in myFood) {
     // Eigener Container pro Kategorie
-    let categoryHTML = `<div class="category id="${category}">
+    let categoryHTML = `<div class="category" id="${category}">
                         <h2 class= "border">${category}</h2>`;
 
     // Nur die Gerichte dieser Kategorie
@@ -123,7 +122,6 @@ function addToBasket(category, index) {
   item.amount++;
   createBasket();
   updateBasketCount();
-
   basketRef.classList.remove("none");
 }
 
@@ -176,9 +174,11 @@ function getBasketCount() {
 
   return count;
 }
+
 function updateBasketCount() {
   basketMiniRef.textContent = getBasketCount();
 }
+
 //function unvalidamount(indexFood) {
 //if (myFood[indexFood].amount < 1) {
 //  console.log("Menge kann nicht weniger als 0 sein!");

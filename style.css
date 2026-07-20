@@ -1,6 +1,11 @@
 .border {
-  margin: 16px;
+  margin-right: 40%;
+  margin-left: 16px;
+  margin-bottom: 16px;
   display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
   flex-direction: column;
   color: white;
   border: black;
@@ -9,35 +14,57 @@
   background-color: rgb(62, 61, 61);
   overflow-y: auto;
 }
+
+.border_basket {
+  margin: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  flex-direction: column;
+  color: white;
+  border: black;
+  border-style: groove;
+  border-radius: 10px;
+  background-color: rgb(62, 61, 61);
+  overflow-y: auto;
+}
+
 .star {
   width: 100px;
   height: 40px;
   object-fit: cover;
 }
+
 .basket_img {
   width: 40px;
   height: auto;
   object-fit: cover;
 }
+
 .menubutton {
   width: 50px;
   height: 50px;
   object-fit: cover;
 }
+
 .border img {
   object-fit: cover;
   width: 80%;
   height: 250px;
   border-radius: 10px;
 }
+
 .overall {
   display: flex;
   flex-direction: column;
   max-width: 1440px;
 }
+
 .none {
   display: none;
 }
+
 .overbasket {
   position: fixed;
   right: 0;
@@ -52,7 +79,8 @@
 #basket {
   position: fixed;
   right: 0;
-  top: 200px;
+  top: 100px;
+  bottom: 200px;
   width: 30%;
   text-align: center;
   background-color: rgb(146, 146, 140);
@@ -65,32 +93,34 @@
   position: fixed;
   bottom: 0px;
   right: 50%;
-  border-radius: 10px;
+  background-color: rgb(62, 61, 61);
+  border-radius: 40px;
   display: none;
-  background-color: rgb(146, 146, 140);
-  height: 5%;
+  height: 36px;
+}
+
+#basket_mini:hover {
+  background-color: orange;
 }
 
 #basket_mini img {
-  width: 40px;
-  height: 40px;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
+
 #basket_count {
   position: absolute;
   top: -6px;
   right: -6px;
-
   width: 20px;
   height: 20px;
   border-radius: 50%;
-
   background-color: rgb(251, 116, 5);
   color: white;
-
   display: flex;
   justify-content: center;
   align-items: center;
-
   font-size: 12px;
   font-weight: bold;
 }
@@ -100,17 +130,20 @@
   width: 10px;
   height: 5px;
 }
+
 #openmenu {
   display: none;
 }
 .gap {
   gap: 2px;
 }
+
 .basket_font {
   display: flex;
   flex-direction: column;
   text-align: start;
 }
+
 #overlay {
   position: fixed;
   text-align: center;
@@ -124,10 +157,12 @@
   background-color: rgba(34, 34, 71, 0.2);
   z-index: 99;
 }
+
 #overlay img {
   width: 500px;
   border-radius: 30%;
 }
+
 @media (max-width: 720px) {
   .star {
     width: 80px;
@@ -144,5 +179,8 @@
   }
   #basket_resp {
     display: block;
+  }
+  .border {
+    margin: 16px;
   }
 }

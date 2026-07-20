@@ -12,7 +12,7 @@ function showContent(item, category, index) {
 
 function showBasket(item, category, index) {
   return `
-    <div class="border">
+    <div class="border_basket">
       <h2>${item.name}</h2>
 
       <button onclick="addamount('${category}', ${index})">+</button>
@@ -45,7 +45,7 @@ function updateBasket(index) {
 function showTotal(subtotal, delivery, total) {
   return `
     <div class="basket-total">
-     <a onclick="Openoverlay()">Bestellen</a>
+     <a class="border_basket" onclick="Openoverlay()">Bestellen</a>
       <p>Zwischensumme: ${subtotal.toFixed(2)} €</p>
       <p>Lieferkosten: ${delivery.toFixed(2)} €</p>
       <hr>
@@ -62,5 +62,3 @@ function showOverlay() {
    
     `;
 }
-
-//<h2> ${(myBasket[i].price * myBasket[i].id).toFixed(i)} €</h2>
