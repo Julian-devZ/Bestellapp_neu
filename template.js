@@ -1,25 +1,38 @@
 function showContent(item, category, index) {
   return `
+  <div class="container">
     <div class="border">
-      <h3>${item.name}</h3>
-      <p>${item.description}</p>
+    <div class="right_part">
+    <img src="${item.image}" alt="${item.name}">
+   <div class="right_part">
+      <h3>${item.name}<p>${item.description}</p></h3>
+
+      </div>
+       <div class="right_part2">
       <p>${item.price} €</p>
-      <button onclick="addToBasket('${category}', ${index})">+</button>
-      <img src="${item.image}" alt="${item.name}">
+      <button onclick="addToBasket('${category}', ${index})">Hinzufügen</button>
+      
+      </div>
+      </div>
+    </div>
     </div>
   `;
 }
 
 function showBasket(item, category, index) {
   return `
-    <div class="border_basket">
-      <h2>${item.name}</h2>
-
+   
+<div class="border_basket">
+ <div class="right_part2">
+      <p>${item.name}</p>
+       </div>
+       <div class="right_part2">
       <button onclick="addamount('${category}', ${index})">+</button>
       ${item.amount}
       <button onclick="lessamount('${category}', ${index})">-</button>
 
-      <h2>${(item.price * item.amount).toFixed(2)} €</h2>
+      <p>${(item.price * item.amount).toFixed(2)} €</p>
+       </div>
     </div>
   `;
 }
@@ -30,13 +43,13 @@ function updateBasket(index) {
   
   <div class="items_basket">
   
-            <h2>${item.name}</h2>
+            <p>${item.name}</p>
 
             <button onclick="addamount(${index})">+</button>
             ${item.amount}
             <button onclick="lessamount(${index})">-</button>
 
-            <h2>${(item.price * item.amount).toFixed(2)} €</h2>
+            <p>${(item.price * item.amount).toFixed(2)} €</p>
             
         </div>
     `;
@@ -45,7 +58,7 @@ function updateBasket(index) {
 function showTotal(subtotal, delivery, total) {
   return `
     <div class="basket-total">
-     <a class="border_basket" onclick="Openoverlay()">Bestellen</a>
+     <button onclick="Openoverlay()">Bestellen</button>
       <p>Zwischensumme: ${subtotal.toFixed(2)} €</p>
       <p>Lieferkosten: ${delivery.toFixed(2)} €</p>
       <hr>

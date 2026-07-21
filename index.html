@@ -3,50 +3,62 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" type="image/vnd.icon" href="./assets/images/Bestell App- Logo.svg">
+    <link
+      rel="icon"
+      type="image/vnd.icon"
+      href="./assets/images/Bestell App- Logo.svg"
+    />
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="standart.css" />
     <title>Bestellapp</title>
   </head>
-  <body onload="(init())">
-    
-      <div class="none" id="overlay"></div>
- 
-    <header id="header">
-        <a href="index.html"
-          ><img src="assets/images/Bestell App- Logo.svg" alt="Logo Bestellapp"
-        /></a>
-        
-          <img class="basket_img" onclick="toggleBasket()" src="assets/images/category.png" alt="">
-      
-      
-      </header>
-      <img class="logo" src="assets/images/Logo.app.png" alt="">
-      <nav>
-      
-        <div id="nav">
-        
+  <body onload="init()">
+    <div class="none" id="overlay"></div>
+        <header class="orange" id="header">
+          <div class="container">
+          <a href="index.html"
+            ><img
+              src="assets/images/Bestell App- Logo.svg"
+              alt="Logo Bestellapp"
+          /></a>
+
+          <img
+            class="basket_img"
+            onclick="toggleBasket()"
+            src="assets/images/category.png"
+            alt=""
+          />
         </div>
+        </header>
+      </section>
+      <img class="logo" src="assets/images/Logo.app.png" alt="" />
+      <nav>
         
-        
+        <div class="container" id="nav">
+          <img src="assets/images/vegetables-set-left-black-slate.jpg" alt=""></div>
       </nav>
-        <div class="grey"> <strong><h1>City Imbiss</h1></strong>
-        <h2>Schnell, lecker und lokal.</h2>
-        <img src="assets/images/1,appearanceId=839,backgroundColor=FFFFFF.jpg" class="star" alt="Bewertung" /></div>
+      <div class="grey">
+        <strong
+          ><h1>
+            City Imbiss
+          </h1><img
+              src="assets/images/1,appearanceId=839,backgroundColor=FFFFFF.jpg"
+              class="star"
+              alt="Bewertung"
+            />
+        </strong>
+        <p>Schnell, lecker und lokal.</p>
+      </div>
       <div id="content"></div>
 
-      <div class="none" id="basket"><h2>Warenkorb</h2>
-        
-      </div>
-    </div>
+      <div class="none" id="basket"><h2>Warenkorb</h2></div>
 
-    <footer id="footer"><p>Copyright by City Imbiss GmbH</p>
-      
-    </footer>
-<div id="basket_mini">
-  <img  onclick="toggleBasket()" src="assets/images/basket.png" alt="Menu">
-<span id="basket_count">0</span>
-</div>
+      <footer class="orange" id="footer"><p class="container">Copyright by City Imbiss GmbH</p></footer>
+    </div>
+    <div id="basket_mini">
+      <img onclick="toggleBasket()" src="assets/images/basket.png" alt="Menu" />
+      <span id="basket_count">0</span>
+    </div>
     <script src="template.js"></script>
     <script src="script.js"></script>
   </body>

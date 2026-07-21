@@ -10,7 +10,7 @@ let myFood = {
 
     {
       name: "Penne Arrabbiata",
-      description: "Penne mit scharfer Tomatensauce und Chili",
+      description: "Penne mit scharfer Tomatensauce und Chili ferfeinert",
       price: 7.5,
       amount: 0,
       image: "assets/images/fresh-pasta.jpg",
@@ -85,7 +85,7 @@ function createContent() {
   for (let category in myFood) {
     // Eigener Container pro Kategorie
     let categoryHTML = `<div class="category" id="${category}">
-                        <h2 class= "border">${category}</h2>`;
+                        <h2 id= "category">${category}</h2>`;
 
     // Nur die Gerichte dieser Kategorie
     for (let i = 0; i < myFood[category].length; i++) {
