@@ -108,10 +108,13 @@ function createBasket() {
       }
     }
   }
-
-  const delivery = 2.5;
-  const total = subtotal + delivery;
-  basketRef.innerHTML += showTotal(subtotal, delivery, total);
+  if (subtotal === 0) {
+    basketRef.innerHTML += emptyBasket();
+  } else {
+    const delivery = 2.5;
+    const total = subtotal + delivery;
+    basketRef.innerHTML += showTotal(subtotal, delivery, total);
+  }
 }
 
 function addToBasket(category, index) {
@@ -122,7 +125,6 @@ function addToBasket(category, index) {
   item.amount++;
   createBasket();
   updateBasketCount();
-  basketRef.classList.remove("none");
 }
 
 function toggleBasket() {
